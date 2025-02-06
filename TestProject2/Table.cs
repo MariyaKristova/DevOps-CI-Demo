@@ -2,6 +2,7 @@ using System.Collections.ObjectModel;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
+using OpenQA.Selenium.Interactions;
 
 namespace TestProject2
 {
@@ -9,12 +10,17 @@ namespace TestProject2
     public class WorkingWithWebTable
     {
         IWebDriver driver;
+        ChromeOptions options;
 
         [SetUp]
         public void SetUp()
         {
             // Create object of ChromeDriver
-            driver = new ChromeDriver();
+            options = new ChromeOptions();
+            options.AddArgument("headless");
+
+            // Create object of ChromeDriver
+            driver = new ChromeDriver(options);
 
             // Add implicit wait
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
@@ -56,8 +62,8 @@ namespace TestProject2
             }
 
             // Verify the file was created and has content
-            Assert.IsTrue(File.Exists(path), "CSV file was not created");
-            Assert.IsTrue(new FileInfo(path).Length > 0, "CSV file is empty");
+            Assert.That(File.Exists(path), Is.True, "CSV file was not created");
+            Assert.That(new FileInfo(path).Length > 0, Is.True, "CSV file is empty");
         }
 
         [TearDown]
@@ -65,6 +71,7 @@ namespace TestProject2
         {
             // Quit the driver
             driver.Quit();
+            driver.Dispose();
         }
     }
 }
