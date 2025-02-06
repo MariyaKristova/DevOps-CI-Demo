@@ -101,3 +101,4 @@
 /Users/mariyakristova/VisualStudioCode/DevOps-GitHub-Actions/06-SeleniumWebDriver/TestProject3/obj/Debug/net6.0/TestProject3.pdb
 /Users/mariyakristova/VisualStudioCode/DevOps-GitHub-Actions/06-SeleniumWebDriver/TestProject3/obj/Debug/net6.0/TestProject3.genruntimeconfig.cache
 /Users/mariyakristova/VisualStudioCode/DevOps-GitHub-Actions/06-SeleniumWebDriver/TestProject3/obj/Debug/net6.0/ref/TestProject3.dll
+/Users/mariyakristova/VisualStudioCode/DevOps-GitHub-Actions/06-SeleniumWebDriver/TestProject3/obj/Debug/net6.0/TestProject3.sourcelink.json
